@@ -30,7 +30,7 @@ jobs:
             with:
                 context: .
                 push: true
-                tags: user/app:latest
+                tags: dufi1928/mon-app-de-biere:latest
     deploy:
         runs-on: ubuntu-latest
         needs: build
