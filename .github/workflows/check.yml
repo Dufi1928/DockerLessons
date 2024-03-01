@@ -42,4 +42,4 @@ jobs:
                     username: ${{ secrets.MANA_USERNAME }}
                     key: ${{ secrets.MANA_SSH }}
                     script: |
-                        docker service create --with-registry-auth --name my-next-app --replicas 2 -p 80:3000 dufi1928/mon-app-de-biere:latest
+                        docker service update --image dufi1928/mon-app-de-biere:latest --with-registry-auth my-next-app
