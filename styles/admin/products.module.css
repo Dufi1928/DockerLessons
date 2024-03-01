@@ -1,0 +1,175 @@
+/* styles/admin/products.module.css */
+.title{
+    margin-bottom: 5px;
+}
+.productsTable {
+    width: 100%;
+    border-radius: 120px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-y: auto;
+    border: 1px solid #e3e4e6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.scrollableTableContainer{
+    overflow-y: auto;
+    max-height: 590px;
+}
+.scrollableTableContainer::-webkit-scrollbar {
+    width: 10px;
+}
+.scrollableTableContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+
+    border-radius: 3px;
+}
+.scrollableTableContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+.scrollableTableContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 3px;
+}
+.scrollableTableContainer{
+    scrollbar-width: thin;
+    border-radius: 15px;
+    scrollbar-color: #888 #f1f1f1;
+}
+.action{
+    height: 100%;
+}
+
+.productsTable th,
+.productsTable td {
+    background-color: #f4f6f8;
+    color: #212b36;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.productsTable th {
+    background-color: #5c6ac4;
+    color: white;
+}
+
+.productImage {
+    margin: auto;
+    width: 50px;
+    height: auto;
+}
+
+.productsButton {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #5c6ac4;
+    color: white;
+}
+
+.productsButton:hover {
+    opacity: 0.8;
+    background-color: #3f4eae;
+}
+.edit:hover{
+    fill: #388e3c;
+}
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupInner {
+    background: white;
+    padding: 20px;
+    min-width: 700px;
+    border-radius: 10px;
+}
+.popupInner h2 {
+    margin-bottom: 30px;
+}
+
+.formGroup {
+    min-width: 90%;
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.formGroup textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.formActions {
+    text-align: right;
+}
+
+.saveButton, .cancelButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.saveButton {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: #039252;
+}
+
+.cancelButton:hover {
+    background-color: #d32f2f;
+}
+
+.createNewProductButton {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #04AA6D;
+    color: white;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.createNewProductButton:hover {
+    background-color: #039252;
+}
+.headContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}

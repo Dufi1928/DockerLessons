@@ -1,0 +1,120 @@
+.productsContainer {
+    font-family: inter, sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+.viewProductButton {
+    width: 100%;
+    align-self: flex-end;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #263238;
+    border: 2px #263238 solid;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s transform ease-in-out;
+    will-change: transform;
+}
+
+
+
+.viewProductButton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    color: white;
+    border: 2px #fff solid;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: #404349;
+}
+
+.viewProductButton:active {
+    transform: scale(0.8); /* Active state */
+    transition: .1s transform ease-in-out;
+}
+.viewProductButton:active:after {
+    transition: .1s transform ease-in-out;
+}
+
+.title {
+    font-size: 2.5em;
+    margin: 50px 0  ;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+.productCard {
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    justify-content: space-between; /* Répartit l'espace verticalement */
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 250px;
+    height: 100%; /* S'étend sur toute la hauteur disponible */
+}
+.productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.productName {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.productDescription {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #666;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.productImage {
+    width: 100%; /* Assurez-vous que l'image est bien ajustée */
+    height: auto;
+    margin-bottom: 35px;
+}
+
+.productPrice {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.productDiscount {
+    font-size: 1em;
+    color: #d32f2f;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.productStock {
+    font-size: 1em;
+    color: #388e3c;
+    margin-bottom: 5px;
+    text-align: left;
+}

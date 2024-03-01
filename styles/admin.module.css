@@ -1,0 +1,26 @@
+.mainContent {
+    flex-grow: 1;
+    position: relative;
+    transition: margin-left 0.3s ease;
+    padding-top: 30px;
+    padding-left: 15px;
+    display: flex;
+    margin-left: 120px;
+    align-items: flex-start;
+    min-height: 90%;
+}
+.expandedMain {
+    margin-left: 270px;
+}
+.content_wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 99%;
+    max-height: 99vh;
+    padding: 15px;
+    padding-right: 30px;
+    border-radius: 15px;
+    background: #9b9999;
+}
