@@ -38,8 +38,8 @@ jobs:
             -   name: Deploy to Docker Swarm
                 uses: appleboy/ssh-action@master
                 with:
-                    host: ${{ secrets.HOST }}
-                    username: ${{ secrets.USERNAME }}
-                    key: ${{ secrets.SSH_KEY }}
+                    host: ${{ secrets.HOST_MANAGER }}
+                    username: ${{ secrets.MANA_USERNAME }}
+                    key: ${{ secrets.MANA_SSH }}
                     script: |
                         docker service update --image dufi1928/mon-app-de-biere:latest --with-registry-auth my-next-app
