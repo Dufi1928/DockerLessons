@@ -14,23 +14,23 @@ jobs:
         runs-on: ubuntu-latest
         needs: test
         steps:
-        -   name: Checkout
-            uses: actions/checkout@v4
-        -   name: Set up QEMU
-            uses: docker/setup-qemu-action@v3
-        -   name: Set up Docker Buildx
-            uses: docker/setup-buildx-action@v3
-        -   name: Login to DockerHub
-            uses: docker/login-action@v3
-            with:
-                username: ${{ secrets.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_PASSWORD }}
-        -   name: Build and push Docker image
-            uses: docker/build-push-action@v5
-            with:
-                context: .
-                push: true
-                tags: dufi1928/mon-app-de-biere:latest
+            -   name: Checkout
+                uses: actions/checkout@v4
+            -   name: Set up QEMU
+                uses: docker/setup-qemu-action@v3
+            -   name: Set up Docker Buildx
+                uses: docker/setup-buildx-action@v3
+            -   name: Login to DockerHub
+                uses: docker/login-action@v3
+                with:
+                    username: ${{ secrets.DOCKER_USERNAME }}
+                    password: ${{ secrets.DOCKER_PASSWORD }}
+            -   name: Build and push Docker image
+                uses: docker/build-push-action@v5
+                with:
+                    context: .
+                    push: true
+                    tags: dufi1928/mon-app-de-biere:latest
     deploy:
         runs-on: ubuntu-latest
         needs: build
@@ -42,10 +42,13 @@ jobs:
                     username: ${{ secrets.MANA_USERNAME }}
                     key: ${{ secrets.MANA_SSH }}
                     script: |
-                        if ! docker service ls | grep -q my-next-app; then
+                        SERVICE_NAME=my-next-app
+                        IMAGE_NAME=dufi1928/mon-app-de-biere:latest
+                        SERVICE_EXISTS=$(docker service ls | grep $SERVICE_NAME || true)
+                        if [ -z "$SERVICE_EXISTS" ]; then
                             echo "Creating new service my-next-app"
-                            docker service create --name my-next-app --with-registry-auth dufi1928/mon-app-de-biere:latest
+                            docker service create --name $SERVICE_NAME --replicas 1 --publish published=80,target=80 $IMAGE_NAME
                         else
                             echo "Service my-next-app already exists, updating..."
-                            docker service update --image dufi1928/mon-app-de-biere:latest --with-registry-auth my-next-app
+                            docker service update --image $IMAGE_NAME $SERVICE_NAME
                         fi
