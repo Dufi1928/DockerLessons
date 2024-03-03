@@ -42,4 +42,10 @@ jobs:
                     username: ${{ secrets.MANA_USERNAME }}
                     key: ${{ secrets.MANA_SSH }}
                     script: |
-                        docker service update --image dufi1928/mon-app-de-biere:latest --with-registry-auth my-next-app
+                        if ! docker service ls | grep -q my-next-app; then
+                            echo "Creating new service my-next-app"
+                            docker service create --name my-next-app --with-registry-auth dufi1928/mon-app-de-biere:latest
+                        else
+                            echo "Service my-next-app already exists, updating..."
+                            docker service update --image dufi1928/mon-app-de-biere:latest --with-registry-auth my-next-app
+                        fi
