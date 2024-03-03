@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         try {
             const { email, password} = req.body;
-            const response = await axios.post('https://revisionzen.com:8000/api/auth/login', {
+            const response = await axios.post('http://localhost:8080/api/auth/login', {
                 email, password
             });
 

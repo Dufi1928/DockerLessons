@@ -20,7 +20,7 @@ export default NextAuth({
         async signIn({ user, account, profile, email, credentials }) {
             try {
                 const passkey = process.env.DJANGO_SECRET_KEY;
-                const response = await axios.post('https://revisionzen.com:8000/api/auth/checkIfUserExist', {
+                const response = await axios.post('http://localhost:8080/api/auth/checkIfUserExist', {
                     email: email || user.email,
                     firstName: profile?.given_name || user?.name?.split(" ")[0], // Ajoute le prénom
                     lastName: profile?.family_name || user?.name?.split(" ").slice(1).join(" "),
