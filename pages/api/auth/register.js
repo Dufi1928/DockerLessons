@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         try {
             const { email, password, firstName, lastName } = req.body;
             const pseudo = firstName + email;
-            const response = await axios.post('http://localhost:8080/api/auth/register', {
+            const response = await axios.post('http://194.163.142.148:8080/api/auth/register', {
                 email, pseudo, password, firstName, lastName
             });
             console.log(response);
