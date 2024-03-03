@@ -8,6 +8,7 @@ export default async function handler(req, res) {
             const response = await axios.post('http://localhost:8080/api/auth/register', {
                 email, pseudo, password, firstName, lastName
             });
+            console.log(response);
 
             res.status(200).json({ jwtToken: response.data.jwt });
         } catch (error) {
