@@ -47,7 +47,7 @@ jobs:
                         SERVICE_EXISTS=$(docker service ls | grep $SERVICE_NAME || true)
                         if [ -z "$SERVICE_EXISTS" ]; then
                             echo "Creating new service my-next-app"
-                            docker service create --name $SERVICE_NAME --replicas 1 --publish published=80,target=80 $IMAGE_NAME
+                            docker service create --name $SERVICE_NAME --replicas 1 --publish published=80,target=3000 $IMAGE_NAME
                         else
                             echo "Service my-next-app already exists, updating..."
                             docker service update --image $IMAGE_NAME $SERVICE_NAME
