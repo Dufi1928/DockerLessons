@@ -46,7 +46,7 @@ jobs:
                         IMAGE_NAME=dufi1928/mon-app-de-biere:latest
                         if docker service inspect $SERVICE_NAME >/dev/null 2>&1; then
                             echo "Service $SERVICE_NAME already exists, updating..."
-                            docker service update --image $IMAGE_NAME $SERVICE_NAME
+                            docker service update --image $IMAGE_NAME:new_version $SERVICE_NAME
                         else
                             echo "Creating new service $SERVICE_NAME"
                             docker service create --name $SERVICE_NAME --replicas 1 --publish published=80,target=3000 $IMAGE_NAME
