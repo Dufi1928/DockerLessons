@@ -52,7 +52,7 @@ const withAuth = (WrappedComponent) => {
                 let config = {
                     method: 'get',
                     maxBodyLength: Infinity,
-                    url: 'https://revisionzen.com:8000/api/auth/checkjwt',
+                    url: 'http://194.163.142.148:8080/api/auth/checkjwt',
                     headers: {
                         'Content-Type': 'text/plain',
                         'Authorization': `Bearer ${localStorage.getItem('jwt')}`
