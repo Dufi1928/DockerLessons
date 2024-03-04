@@ -29,6 +29,7 @@ const ProductDetail = () => {
         fetchProduct();
     }, [router.isReady, productId]);
 
+
     const handlePurchase = () => {
         console.log(`Purchased ${quantity} of product ID: ${productId}`);
     };
