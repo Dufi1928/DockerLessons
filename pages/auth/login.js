@@ -87,7 +87,7 @@ function LogIn() {
                     </div>
                     <div className={styles.form_wrapper}>
                         <form className={styles.form}>
-                            <h2 className={styles.form_title}>Connecte-toi </h2>
+                            <h2 className={styles.form_title}>Connecte-toi si tu veux </h2>
                             <div className={styles.socials_buttons}>
                                 <button className={styles.google_button} onClick={() => signIn('google', { callbackUrl: `${currentUrl}/` })}> <GoogleIcon/><span className={styles.inner_button}>Google</span></button>
                                 <button className={styles.facebook_button}><FacebookIcon/><span className={styles.inner_button}>Facebook</span></button>
