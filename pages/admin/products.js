@@ -10,7 +10,7 @@ const Products = () => {
     const fetchProducts = async () => {
         console.log(process.env.PRODUCT_ENDPOINT+'/products')
         try {
-            const response = await axios.get(' https://15.188.52.177/products');
+            const response = await axios.get(' http://194.163.142.148:3001/products');
             setProducts(response.data);
         } catch (error) {
             console.error("Error fetching data: ", error);
@@ -47,7 +47,7 @@ const Products = () => {
 
     const handleDelete = async (productId) => {
         try {
-            const response = await axios.delete(` https://15.188.52.177/product/delete/${productId}`);
+            const response = await axios.delete(` http://194.163.142.148:3001/product/delete/${productId}`);
             console.log('Produit supprimé :', response.data);
         } catch (error) {
             console.error("Erreur lors de la suppression du produit: ", error);
