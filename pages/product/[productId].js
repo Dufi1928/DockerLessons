@@ -19,7 +19,7 @@ const ProductDetail = () => {
 
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(` http://194.163.142.148:3001/product/${productId}`);
+                const response = await axios.get(`process.env.PRODUCT_ENDPOINT/product/${productId}`);
                 setProduct(response.data);
             } catch (error) {
                 console.error("Error fetching product: ", error);

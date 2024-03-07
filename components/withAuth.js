@@ -52,7 +52,7 @@ const withAuth = (WrappedComponent) => {
                 let config = {
                     method: 'get',
                     maxBodyLength: Infinity,
-                    url: 'http://194.163.142.148:8080/api/auth/checkjwt',
+                    url: 'process.env.USERS_ENDPOINT/api/auth/checkjwt',
                     headers: {
                         'Content-Type': 'text/plain',
                         'Authorization': `Bearer ${localStorage.getItem('jwt')}`

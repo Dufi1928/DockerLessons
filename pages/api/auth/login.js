@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         try {
             const { email, password} = req.body;
-            const response = await axios.post('http://194.163.142.148:8080/api/authls' +
+            const response = await axios.post('process.env.USERS_ENDPOINT/api/authls' +
                 '/login', {
                 email, password
             });

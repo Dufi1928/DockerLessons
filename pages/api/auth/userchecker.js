@@ -6,7 +6,7 @@ export default async function handler(req, res) {
             const { email } = req.body;
             const passkey = process.env.DJANGO_SECRET_KEY
 
-            const response = await axios.post('http://194.163.142.148:8080/api/auth/checkIfUserExist', {
+            const response = await axios.post('process.env.USERS_ENDPOINT/api/auth/checkIfUserExist', {
                 email,
                 passkey
             });
